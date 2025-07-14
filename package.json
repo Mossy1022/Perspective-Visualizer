@@ -1,0 +1,12 @@
+{
+  "name": "perspective-visualizer",
+  "version": "0.1.0",
+  "description": "MVP intent-parser dataset + CI guard-rail",
+  "main": "index.js",
+  "scripts": {
+    "generate": "node scripts/generate_intent_dataset.js",
+    "train": "node scripts/train_intent_parser.js",
+    "test": "node tests/intent_parser.integration.test.js"
+  },
+  "license": "MIT"
+}

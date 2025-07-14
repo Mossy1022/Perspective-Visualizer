@@ -1,0 +1,22 @@
+# .github/workflows/intent_parser.yml
+name: Intent Parser CI
+
+on:
+  push:
+    paths:
+      - 'scripts/**'
+      - 'datasets/intent_parser/**'
+      - 'tests/intent_parser.integration.test.js'
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - 'datasets/intent_parser/**'
+      - 'tests/intent_parser.integration.test.js'
+
+jobs:
+  intent-parser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run integration test
+        run: node tests/intent_parser.integration.test.js
