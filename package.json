@@ -4,9 +4,27 @@
   "description": "MVP intent-parser dataset + CI guard-rail",
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "generate": "node scripts/generate_intent_dataset.js",
     "train": "node scripts/train_intent_parser.js",
-    "test": "node tests/intent_parser.integration.test.js"
+    "test": "node tests/intent_parser.integration.test.js",
+    "serve:metrics": "node scripts/metrics_server.js"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chroma-js": "^3.1.2",
+    "d3-scale": "^4.0.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zustand": "^5.0.6"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
 }

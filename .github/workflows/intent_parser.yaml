@@ -24,3 +24,9 @@ jobs:
         with:
           name: intent_parser_metrics
           path: metrics.prom
+      # TODO: add back after the artifact upload.
+      # - name: Prom config lint
+      #   run: docker run --rm -v ${{ github.workspace }}/ops/prometheus:/cfg prom/prometheus:v2.52.0 \
+      #        promtool check config /cfg/prometheus.yml
+      # - name: Compose config validate
+      #   run: docker-compose -f docker-compose.yml config

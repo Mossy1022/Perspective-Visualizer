@@ -1,0 +1,32 @@
+/* —— Shell —— */
+.studio-root  { display:flex;height:100vh;font-family:var(--font-sans);
+    background:var(--canvas-bg);color:var(--text-body);}
+.left-rail    { width:260px;background:var(--pane-bg);
+    border-right:1px solid var(--border-strong);overflow:auto;}
+.right-dock   { width:300px;background:var(--pane-bg);
+    border-left:1px solid var(--border-strong);overflow:auto;}
+.canvas-wrap  { flex:1;overflow:auto;padding:var(--space-3);}
+
+/* —— Foot-bar —— */
+.footbar      { position:fixed;bottom:0;left:0;right:0;height:34px;
+    background:var(--pane-bg);border-top:1px solid var(--border-strong);
+    padding:var(--space-1)var(--space-3);font-size:var(--step--1);
+    z-index:10;}
+.footbar button{padding:4px 10px;font:inherit;cursor:pointer;}
+
+/* —— Table —— */
+.criteria-grid { border-collapse:collapse;width:100%; }
+.criteria-grid th,
+.criteria-grid td{border:1px solid var(--border-subtle);
+      padding:var(--space-1)var(--space-2);text-align:center;}
+
+td[role="spinbutton"]{transition:background 120ms;}
+td[role="spinbutton"]:focus{outline:var(--focus-ring);}
+.criteria-cell:hover{background:var(--gray-1);}
+
+.criteria-grid th button{margin-left:.25rem;font:inherit;background:none;
+              border:none;cursor:pointer;}
+.criteria-grid th button:hover{color:#c00;}
+
+/* token tweak (if desired) */
+:root{ --border-subtle: var(--gray-3); } /* remove if theme.css already handles */

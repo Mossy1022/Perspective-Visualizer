@@ -23,7 +23,7 @@ for (const line of file) {
     long_term_cost:   ['long‑term cost', 'total expenditure', 'lifetime expense'],
     battery_life:     ['battery life', 'runtime', 'charge duration'],
     equity:           ['equity', 'fairness', 'equal access'],
-    carbon_footprint: ['carbon footprint', 'emissions', 'CO2 output'],
+    carbon_footprint: ['carbon footprint', 'emissions', 'CO₂ output'],
     usability:        ['ease of use', 'usability', 'user friendliness'],
     risk:             ['structural risk', 'hazard', 'failure probability'],
     speed:            ['speed', 'throughput', 'processing time'],
@@ -49,5 +49,18 @@ const precision = tp / (tp + fp);
 const recall    = tp / (tp + fn);
 const f1        = 2 * precision * recall / (precision + recall);
 
+const promLines =
+  `intent_parser_hit{result="success"} ${tp}\n` +
+  `intent_parser_hit{result="failure"} ${fp + fn}\n` +
+  `intent_parser_f1 ${f1.toFixed(3)}\n`;
+require('node:fs').writeFileSync('metrics.prom', promLines, 'utf8');
+
+console.log(
+  `intent_parser_hit{result="success"} ${tp}\n` +
+  `intent_parser_hit{result="failure"} ${fp + fn}`
+);
+
 console.log(`Precision: ${precision.toFixed(3)}\nRecall:    ${recall.toFixed(3)}\nF1:        ${f1.toFixed(3)}`);
+
+
 process.exitCode = f1 >= 0.80 ? 0 : 1;
