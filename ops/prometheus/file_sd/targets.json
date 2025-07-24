@@ -1,6 +1,0 @@
-[
-  {
-    "labels": { "env": "local" },
-    "targets": [ "host.docker.internal:9464" ]
-  }
-]
