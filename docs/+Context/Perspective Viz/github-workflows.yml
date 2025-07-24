@@ -1,0 +1,37 @@
+name: Route Abuse Report to Moderators
+
+on:
+  pull_request:
+    paths:
+      - 'governance/abuse_report.yaml'
+
+jobs:
+  validate_and_route:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read          # checkout
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          npm install --no-save ajv@8 js-yaml@4
+
+      - name: Validate abuse_report.yaml
+        run: node scripts/route_abuse_report.mjs validate
+
+      - name: Post to #moderator‑queue
+        if: success()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: node scripts/route_abuse_report.mjs send
+
+
+name: .github/workflows/abuse-report-routing.yml
+

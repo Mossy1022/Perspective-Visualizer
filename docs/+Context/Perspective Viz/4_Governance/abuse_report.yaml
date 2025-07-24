@@ -1,0 +1,19 @@
+report_id: ar_01FX9KZ2QW
+reported_at: 2025-07-14T18:35:21Z
+reporter:
+  agent_id: u541
+  identity_tier: pseudo
+accused:
+  agent_id: u302
+  identity_tier: anon
+context:
+  perspective_id: water_crisis_v0
+  snapshot_id: snap_11
+  path: /grid/0/cells/3
+violation_type: hate_speech
+description: >
+  The accused added a criterion weight that contains a slur targeting a protected group.
+evidence:
+  - https://perspective.example.com/perspectives/water_crisis_v0/snap_11#cell=/grid/0/cells/3
+severity: high
+status: open

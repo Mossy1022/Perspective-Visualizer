@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Abuse Report",
+    "type": "object",
+    "required": [
+      "report_id",
+      "reported_at",
+      "reporter",
+      "accused",
+      "context",
+      "violation_type",
+      "evidence"
+    ],
+    "properties": {
+      "report_id": {
+        "type": "string",
+        "pattern": "^ar_[a-zA-Z0-9_-]{6,}$",
+        "description": "Unique report id (e.g. ar_01FX9KZ2QW)."
+      },
+      "reported_at": {
+        "type": "string",
+        "format": "date-time",
+        "description": "ISO‑8601 UTC timestamp when the report was filed."
+      },
+      "reporter": {
+        "type": "object",
+        "required": ["agent_id", "identity_tier"],
+        "properties": {
+          "agent_id": { "type": "string" },
+          "identity_tier": {
+            "type": "string",
+            "enum": ["anon", "pseudo", "verified"]
+          }
+        }
+      },
+      "accused": {
+        "type": "object",
+        "required": ["agent_id"],
+        "properties": {
+          "agent_id": { "type": "string" },
+          "identity_tier": {
+            "type": "string",
+            "enum": ["anon", "pseudo", "verified"]
+          }
+        }
+      },
+      "context": {
+        "type": "object",
+        "required": ["perspective_id", "snapshot_id", "path"],
+        "properties": {
+          "perspective_id": { "type": "string" },
+          "snapshot_id": { "type": "string" },
+          "path": {
+            "type": "string",
+            "description": "JSON‑pointer path to the offending node (/grid/0/cells/3)."
+          }
+        }
+      },
+      "violation_type": {
+        "type": "string",
+        "enum": ["hate_speech", "spam", "doxxing", "harassment", "copyright", "other"]
+      },
+      "description": { "type": "string", "maxLength": 2048 },
+      "evidence": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "minItems": 1
+      },
+      "severity": {
+        "type": "string",
+        "enum": ["low", "medium", "high", "critical"],
+        "default": "medium"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["open", "in_review", "resolved", "rejected"],
+        "default": "open"
+      }
+    }
+  }
+  

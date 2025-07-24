@@ -1,0 +1,15 @@
+| Threat                                 | Surface                                                                            | Mitigation                                                                                                |
+| -------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| XSS in evidence links                  | markdown renderer                                                                  | DOMPurify whitelist, no inline JS                                                                         |
+| DoS via weight‑spam                    | weight API                                                                         | per‑user rate limit 50 ops/min, clamp ±100                                                                |
+| Deep‑nest recursion abuse              | `drilldown` pointer                                                                | max depth = 3, server rejects cycles                                                                      |
+| Stolen keys                            | local vault                                                                        | encrypted recovery phrase, optional hardware token                                                        |
+| Data poisoning                         | public canvases                                                                    | credibility‑weighted quorum, Abuse‑Report queue                                                           |
+| Phishing fork links                    | URL spoof                                                                          | canonical link shortener with `sig=` param                                                                |
+| Compromised docker image               | self‑hosting                                                                       | SBOM + cosign signature, update check                                                                     |
+| Supply‑chain typo‑squatting            | dependency manager lockfiles (`package-lock.json`, `pnpm-lock.yaml`, `Cargo.lock`) | cryptographically signed lock‑files (cosign/sigstore), automated diff review in CI, dependency allow‑list |
+| OpenAI key leakage                     | `.env` files, CI logs, client bundles                                              | secrets‑scanner (gitleaks/truffleHog) on commit and in CI, block push on match, rotate keys via vault     |
+| Out‑of‑memory DoS                      | container runtime                                                                  | `mem_limit`, `MAX_UPLOAD_SIZE`, SBOM size gate                                                            |
+| Privilege escalation via setuid binary | Privilege escalation via setuid binary                                             | Privilege escalation via setuid binary                                                                    |
+
+No critical CVEs allowed in dependency scan at release cut.

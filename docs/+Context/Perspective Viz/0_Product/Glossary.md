@@ -1,0 +1,22 @@
+_Alphabetical. One line per concept for fast search._
+
+- **Agent** – person, org, government or bot authoring a perspective.
+- **Badge** – small icon conveying license or reputation (Dimension 8).
+- **Bridge Lens** – overlay with sliders to find minimum weight shifts for agreement.
+- **Confidence Field** – global certainty measure visualized by halo + fog (Dimension 3).
+- **Criteria Grid** – heat-map matrix of options × criteria (Dimension 1).
+- **Criteria** – an axis against which an option is judged; one column in the Criteria Grid.
+- **Drill‑down Snapshot** – A nested **PerspectiveSnapshot** referenced from a WeightCell. Opens as a sub‑grid; rolled‑up via a reducer.
+- **Edge** – JSON object capturing causal link (`from`,`to`,`strength`) (Dimension 5).
+- **Evidence Layer** – credibility & provenance textures backing each weight (Dimension 2).
+- **Explain-Back Check** – guard-rail that blocks save if rationale missing.
+- **Fork Lineage** – ribbon showing ahead/behind status across versions (Dimension 7).
+- **Governance Badges** – cluster of license + reputation icons (Dimension 8).
+- **Kintsugi Overlay** – gold crack texture marking resolved contradictions (Loki - Citadel at The End of Time)
+- **Monte-Carlo Panel** – histogram of outcome scores after random perturbations.
+- **Loc‑Confidence** – per‑cell certainty value (0‑1) that modulates alpha.
+- **Option** – a choice / stance being compared (row header in the grid).
+- **Perspective** – a snapshot JSON bundle of weighted reasons bound to an Agent.
+- **Simulation Loop** – contradiction pulse → bridge lens → Monte-Carlo → snapshot (Dimension 9).
+- **Timeline Thread** – git-style branch view of perspective snapshots (Dimension 6).
+- **Weight-Spam Log** – CSV audit of rapid or excessive weight edits.
