@@ -1,0 +1,65 @@
+{
+    "meta": {
+      "id": "nuclear_vs_renewables_mock",
+      "created_at": "2025-07-16T00:00:00Z",
+      "license_code": "MIT"
+    },
+    "agent": {
+      "id": "demo",
+      "display_name": "Demo Snapshot",
+      "identity_tier": "anon"
+    },
+    "grid": [
+      {
+        "option_id": "Nuclear Fleet Expansion",
+        "cells": [
+          {"criterion_id": "Levelized Cost",          "weight": -30, "loc_conf": 0.7, "evidence_id": "e6",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Lifecyle Emissions",     "weight":  80, "loc_conf": 0.9, "evidence_id": "e2",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Capacity Factor",         "weight":  90, "loc_conf": 0.85,"evidence_id": "e3",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Build Time",              "weight": -80, "loc_conf": 0.8, "evidence_id": "e4",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Accident Fatality Rate",  "weight": -40, "loc_conf": 0.75,"evidence_id": "e5",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Long Term Waste Cost",    "weight": -60, "loc_conf": 0.8, "evidence_id": "e11", "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Land Use",                "weight":  60, "loc_conf": 0.9, "evidence_id": "e7",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Water Use",               "weight": -50, "loc_conf": 0.8, "evidence_id": "e8",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Grid Flexibility",        "weight": -20, "loc_conf": 0.6, "evidence_id": "e9",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Job Creation",            "weight":  20, "loc_conf": 0.7, "evidence_id": "e10", "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Supply Chain Risk",       "weight": -10, "loc_conf": 0.65,"evidence_id": "e11", "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"}
+        ]
+      },
+      {
+        "option_id": "100% Renewables Mix",
+        "cells": [
+          {"criterion_id": "Levelized Cost",          "weight":  40, "loc_conf": 0.85,"evidence_id": "e1",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Lifecyle Emissions",     "weight":  70, "loc_conf": 0.9, "evidence_id": "e2",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Capacity Factor",         "weight": -40, "loc_conf": 0.8, "evidence_id": "e3",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Build Time",              "weight":  80, "loc_conf": 0.9, "evidence_id": "e4",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Accident Fatality Rate",  "weight":  90, "loc_conf": 0.9, "evidence_id": "e5",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Long Term Waste Cost",    "weight":  30, "loc_conf": 0.75,"evidence_id": "e7",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Land Use",                "weight": -60, "loc_conf": 0.8, "evidence_id": "e7",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Water Use",               "weight":  40, "loc_conf": 0.85,"evidence_id": "e8",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Grid Flexibility",        "weight":  30, "loc_conf": 0.7, "evidence_id": "e9",  "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Job Creation",            "weight":  60, "loc_conf": 0.75,"evidence_id": "e10", "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"},
+          {"criterion_id": "Supply Chain Risk",       "weight":  10, "loc_conf": 0.6, "evidence_id": "e11", "updated_by": "demo", "updated_at": "2025-07-16T00:00:00Z"}
+        ]
+      }
+    ],
+    "edges": [],
+    "evidence": [
+      {"id": "e1",  "title": "Lazard LCOE v18 (mock)",              "source_url": "https://example.com/lazard_v18.pdf",           "cred_score": 0.90, "mime": "application/pdf", "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e2",  "title": "IPCC AR6 lifecycle emissions (mock)", "source_url": "https://example.com/ipcc_ar6_ch7.pdf",         "cred_score": 0.95, "mime": "application/pdf", "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e3",  "title": "WNA Capacity Factors 2024 (mock)",    "source_url": "https://example.com/wna_cf2024.pdf",           "cred_score": 0.85, "mime": "application/pdf", "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e4",  "title": "IEA Build Time Table 2024 (mock)",    "source_url": "https://example.com/iea_buildtime.html",       "cred_score": 0.80, "mime": "text/html",       "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e5",  "title": "OWID Energy Fatalities 2024 (mock)",  "source_url": "https://example.com/owid_energy_deaths.csv",   "cred_score": 0.90, "mime": "text/csv",        "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e6",  "title": "Blog Post: 'New Nuclear is Cheap!'",  "source_url": "https://nuclearfanblog.example.com/cheap",      "cred_score": 0.20, "mime": "text/html",       "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e7",  "title": "NREL Land Use Meta 2023 (mock)",      "source_url": "https://example.com/nrel_landuse.pdf",          "cred_score": 0.85, "mime": "application/pdf", "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e8",  "title": "WRI Water Use 2024 (mock)",           "source_url": "https://example.com/wri_wateruse.pdf",          "cred_score": 0.80, "mime": "application/pdf", "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e9",  "title": "DOE Grid Flexibility Report (mock)",  "source_url": "https://example.com/doe_gridflex.pdf",          "cred_score": 0.70, "mime": "application/pdf", "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e10", "title": "BLS Clean Energy Jobs 2025 (mock)",   "source_url": "https://example.com/bls_jobs.xlsx",            "cred_score": 0.65, "mime": "application/vnd.ms-excel", "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"},
+      {"id": "e11", "title": "IAEA Uranium Supply 2024 (mock)",     "source_url": "https://example.com/iaea_supply.pdf",          "cred_score": 0.75, "mime": "application/pdf", "added_by": "demo", "added_at": "2025-07-16T00:00:00Z"}
+    ],
+    "confidence": 0.6,
+    "emotion": {"valence": 0, "arousal": 0},
+    "badges": {"reputation": 0, "license": "MIT"},
+    "simulation": null
+  }
+  

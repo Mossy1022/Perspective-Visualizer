@@ -1,0 +1,32 @@
+name: Intent Parser CI
+
+on:
+  push:
+    paths:
+      - 'scripts/**'
+      - 'datasets/intent_parser/**'
+      - 'tests/intent_parser.integration.test.js'
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - 'datasets/intent_parser/**'
+      - 'tests/intent_parser.integration.test.js'
+
+jobs:
+  intent-parser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run integration test
+        run: node tests/intent_parser.integration.test.js
+      - name: Upload Prom metrics artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: intent_parser_metrics
+          path: metrics.prom
+      # TODO: add back after the artifact upload.
+      # - name: Prom config lint
+      #   run: docker run --rm -v ${{ github.workspace }}/ops/prometheus:/cfg prom/prometheus:v2.52.0 \
+      #        promtool check config /cfg/prometheus.yml
+      # - name: Compose config validate
+      #   run: docker-compose -f docker-compose.yml config

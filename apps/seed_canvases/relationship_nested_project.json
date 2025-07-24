@@ -1,0 +1,80 @@
+{
+    "meta": {
+      "id": "project_nested_commit",
+      "created_at": "2025-07-20T13:25:00Z",
+      "license_code": "MIT",
+      "parent_snapshot_id": "relationship_commitment_v1"
+    },
+    "agent": {"id": "evan", "display_name": "Evan", "identity_tier": "pseudo" },
+    "grid": [
+      {
+        "option_id": "Volunteering",
+        "cells": [
+          {
+            "criterion_id": "social_impact",
+            "weight": 70,
+            "loc_conf": 0.92,
+            "evidence_ids": ["e_volunteer_stat"],
+            "rationale": "Direct community benefit—see cited data.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:25:10Z"
+          },
+          {
+            "criterion_id": "relationship_time_cost",
+            "weight": -30,
+            "loc_conf": 0.56,
+            "rationale": "Shared service reduces couple leisure sessions.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:25:20Z"
+          }
+        ]
+      },
+      {
+        "option_id": "Activism",
+        "cells": [
+          {
+            "criterion_id": "social_impact",
+            "weight": 40,
+            "loc_conf": 0.72,
+            "evidence_ids": ["e_activism_policy"],
+            "rationale": "Requires policy change to scale.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:25:15Z"
+          },
+          {
+            "criterion_id": "relationship_time_cost",
+            "weight": -80,
+            "loc_conf": 0.38,
+            "rationale": "Frequent travel, less couple time.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:25:25Z"
+          }
+        ]
+      }
+    ],
+    "edges": [],
+    "evidence": [
+      {
+        "id": "e_volunteer_stat",
+        "title": "National Volunteer Rate 2024",
+        "source_url": "https://example.com/volunteer2024",
+        "cred_score": 0.9,
+        "mime": "text/html",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:25:15Z"
+      },
+      {
+        "id": "e_activism_policy",
+        "title": "Policy Success Rate (Activism)",
+        "source_url": "https://example.com/activism-success",
+        "cred_score": 0.82,
+        "mime": "text/html",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:25:18Z"
+      }
+    ],
+    "confidence": 0.74,
+    "emotion": {"valence": 0.1, "arousal": 0.32},
+    "badges": {"reputation": 4, "license": "MIT"},
+    "simulation": null
+  }

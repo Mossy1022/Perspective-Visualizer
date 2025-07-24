@@ -1,0 +1,1 @@
+Synthetic dataset (CC-BY-4.0) – regenerate via `node scripts/generate_intent_dataset.js`

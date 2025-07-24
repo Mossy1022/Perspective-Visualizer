@@ -1,0 +1,116 @@
+/* —— Shell —— */
+.studio-root  { display:flex;height:100vh;font-family:var(--font-sans);
+    background:var(--canvas-bg);color:var(--text-body);}
+.left-rail    { padding-right: 24px;max-width:350px;background:var(--pane-bg);
+    border-right:1px solid var(--border-strong);overflow:auto;}
+.right-dock   { width:630px;background:var(--pane-bg);
+    border-left:1px solid var(--border-strong);overflow:auto;}
+
+:root {
+    --cell-size: 56px;      /* diameter of each square chip   */
+    --cell-gap : 8px;       /* white gutter all around        */
+    --label-col: 180px;     /* row-label column width         */
+  }
+
+/* —— GRID LAYOUT ——————————————————————————————————— */
+/* 1️⃣  Let the table hug its content instead of 100 % width */
+.criteria-grid {
+    width: auto;            /* ← stops it stretching */
+    max-width: 100%;        /* safety for small view-ports   */
+    table-layout: fixed;    /* makes chip column widths uniform */
+    border-spacing: var(--cell-gap);
+    margin: 0;              /* remove accidental centring */
+  }
+  
+  /* 2️⃣  Colour chips ======================================= */
+  .criteria-grid td {
+    width:  var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 6px;           /* slightly rounder like the reference */
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  /* 3️⃣  Row & column headers =============================== */
+  .criteria-grid thead  th:first-child,
+  .criteria-grid tbody  th      {      /* label column */
+    min-width: var(--label-col);
+    text-wrap-mode: nowrap;
+  }
+  
+  .criteria-grid thead  th:not(:first-child) {
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border-strong);
+    min-width: 150px;
+    text-wrap-mode: nowrap;
+  }
+  
+  .criteria-grid tbody th {
+    padding-right: calc(var(--cell-gap) * 1.5);  /* clears space before chips */
+    border-right: 2px solid var(--border-strong);
+    text-align: right;
+  }
+
+  /* .criteria-grid thead th,
+    .criteria-grid tbody th{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;   /* label left, icon right        
+    } */
+  
+  /* ── Canvas container must grow with the window ─────────── */
+.canvas-wrap{
+    flex: 1 1 auto;                 /* ← restores full-width layout  */
+    min-width: 0;                   /* prevents unwanted overflow    */
+    overflow: auto;
+    padding: var(--space-3);
+  
+    /* keep the flexbox we added for grid alignment */
+    display: flex;
+    justify-content: flex-start;    /* or center / space-between …   */
+    align-items: flex-start;
+  }
+  
+  /* 4️⃣  Hover & focus states ------------------------------------------- */
+  td[role="spinbutton"]           { transition: box-shadow .15s; }
+  td[role="spinbutton"]:focus     { outline: none;
+                                    box-shadow: inset 0 0 0 2px var(--brand-5); }
+  .criteria-cell:hover            { box-shadow: inset 0 0 0 2px var(--brand-5); }
+  
+.footbar {                              
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 34px;
+    background: var(--pane-bg);
+    border-top: 1px solid var(--border-strong);
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--step--1);
+    z-index: 20;
+  }
+  .footbar button { padding: 4px 10px; font: inherit; cursor: pointer; }
+
+  /* token tweak (if desired) */
+:root{ --border-subtle: var(--gray-3); } /* remove if theme.css already handles */
+
+td.has-drilldown::after{
+  content:"▦";
+  position:absolute;
+  right:2px;
+  bottom:2px;
+  font-size:0.82em;
+  opacity:0.6;
+}
+
+.criteria-cell.has-drilldown {
+  position: relative;
+}
+
+.drilldown-icon {
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
+  font-size: 0.75em;
+  opacity: 0.6;
+  pointer-events: none;
+}

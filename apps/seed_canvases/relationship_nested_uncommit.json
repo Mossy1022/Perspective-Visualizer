@@ -1,0 +1,107 @@
+{
+    "meta": {
+      "id": "project_nested_uncommit",
+      "created_at": "2025-07-20T13:26:00Z",
+      "license_code": "MIT",
+      "parent_snapshot_id": "relationship_commitment_v1"
+    },
+    "agent": { "id": "evan", "display_name": "Evan", "identity_tier": "pseudo" },
+    "grid": [
+      {
+        "option_id": "Freelance Project",
+        "cells": [
+          {
+            "criterion_id": "autonomy_level",
+            "weight": 78,
+            "loc_conf": 0.9,
+            "evidence_ids": [ "e_freelance_autonomy", "e_income_report" ],
+            "rationale": "I fully control the scope and direction of the work.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:26:12Z"
+          },
+          {
+            "criterion_id": "income_stability",
+            "weight": 20,
+            "loc_conf": 0.7,
+            "evidence_ids": [ "e_income_report" ],
+            "rationale": "More clients than last year, but recurring revenue is still uncertain.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:26:19Z"
+          },
+          {
+            "criterion_id": "personal_growth",
+            "weight": 32,
+            "loc_conf": 0.68,
+            "rationale": "Learning curve steeper than with staff work, but less guidance.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:26:25Z"
+          }
+        ]
+      },
+      {
+        "option_id": "Passion Hobby",
+        "cells": [
+          {
+            "criterion_id": "autonomy_level",
+            "weight": 88,
+            "loc_conf": 0.93,
+            "evidence_ids": [ "e_leisure_study" ],
+            "rationale": "No obligations; total creative freedom.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:26:32Z"
+          },
+          {
+            "criterion_id": "income_stability",
+            "weight": -28,
+            "loc_conf": 0.35,
+            "rationale": "No profit—purely for self-fulfillment at present.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:26:38Z"
+          },
+          {
+            "criterion_id": "personal_growth",
+            "weight": 50,
+            "loc_conf": 0.75,
+            "evidence_ids": [],
+            "rationale": "Improves skill but may never ship.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:26:45Z"
+          }
+        ]
+      }
+    ],
+    "edges": [],
+    "evidence": [
+      {
+        "id": "e_freelance_autonomy",
+        "title": "2025 Freelance Survey",
+        "source_url": "https://example.com/freelance2025",
+        "cred_score": 0.8,
+        "mime": "application/pdf",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:27:01Z"
+      },
+      {
+        "id": "e_income_report",
+        "title": "Open Bank Project Annual Income Analysis",
+        "source_url": "https://example.com/income2025",
+        "cred_score": 0.68,
+        "mime": "application/pdf",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:27:02Z"
+      },
+      {
+        "id": "e_leisure_study",
+        "title": "Hobbies and Well-being Study",
+        "source_url": "https://example.com/leisure",
+        "cred_score": 0.72,
+        "mime": "application/pdf",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:27:04Z"
+      }
+    ],
+    "confidence": 0.78,
+    "emotion": { "valence": 0.13, "arousal": 0.18 },
+    "badges": { "reputation": 4, "license": "MIT" },
+    "simulation": null
+  }

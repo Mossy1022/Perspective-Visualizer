@@ -1,0 +1,190 @@
+{
+    "meta": {
+      "id": "relationship_commitment_v1",
+      "created_at": "2025-07-20T13:20:00Z",
+      "license_code": "MIT"
+    },
+    "agent": { "id": "evan", "display_name": "Evan", "identity_tier": "pseudo" },
+    "grid": [
+      {
+        "option_id": "Commit Now",
+        "cells": [
+          {
+            "criterion_id": "career_focus_alignment",
+            "weight": -54,
+            "loc_conf": 0.7,
+            "evidence_ids": [ "e_career_o1" ],
+            "rationale": "My long-term goals might not match this direction now.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:21:00Z"
+          },
+          {
+            "criterion_id": "emotional_support_gain",
+            "weight": 45,
+            "loc_conf": 0.8,
+            "evidence_ids": [ "e_gottman" ],
+            "rationale": "Steady support buffers stress, especially during tough career phases.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:22:00Z"
+          },
+          {
+            "criterion_id": "time_flexibility_loss",
+            "weight": -40,
+            "loc_conf": 0.65,
+            "evidence_ids": [ "e_time_journal", "e_gottman" ],
+            "rationale": "Weekends and summer plans are less flexible with commitment.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:22:50Z"
+          },
+          {
+            "criterion_id": "creative_energy_synergy",
+            "weight": 33,
+            "loc_conf": 0.5,
+            "evidence_ids": [],
+            "rationale": "Brainstorm sessions go better in pairs, but time is limited.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:23:20Z"
+          },
+          {
+            "criterion_id": "financial_resilience",
+            "weight": 15,
+            "loc_conf": 0.3,
+            "evidence_ids": ["e_financial"],
+            "rationale": "Could pool rent if needed, though dual income isn't guaranteed.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:23:45Z"
+          },
+          {
+            "criterion_id": "mission_alignment",
+            "weight": 12,
+            "loc_conf": 0.7,
+            "evidence_ids": [],
+            "rationale": "We both value service work; might create more alignment.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:24:13Z",
+            "drilldown": {
+              "snapshot_id": "project_nested_commit",
+              "reducer": "conf_weighted",
+              "last_rollup": 8.5
+            }
+          }
+        ]
+      },
+      {
+        "option_id": "Stay Uncommitted (12 mo)",
+        "cells": [
+          {
+            "criterion_id": "career_focus_alignment",
+            "weight": 44,
+            "loc_conf": 0.92,
+            "evidence_ids": ["e_career_o2"],
+            "rationale": "More time/energy for professional work and mobility.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:21:00Z"
+          },
+          {
+            "criterion_id": "emotional_support_gain",
+            "weight": -20,
+            "loc_conf": 0.71,
+            "evidence_ids": [],
+            "rationale": "Some support is periodic, but loneliness risk increases.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:22:00Z"
+          },
+          {
+            "criterion_id": "time_flexibility_loss",
+            "weight": 44,
+            "loc_conf": 0.77,
+            "evidence_ids": ["e_time_journal"],
+            "rationale": "Spontaneity is preserved — can travel, shift plans anytime.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:23:00Z"
+          },
+          {
+            "criterion_id": "creative_energy_synergy",
+            "weight": -17,
+            "loc_conf": 0.51,
+            "evidence_ids": [],
+            "rationale": "Miss out on mutual inspiration for new projects.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:23:20Z"
+          },
+          {
+            "criterion_id": "financial_resilience",
+            "weight": 8,
+            "loc_conf": 0.30,
+            "evidence_ids": [],
+            "rationale": "No partner backstop during emergencies, income variable.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:23:20Z"
+          },
+          {
+            "criterion_id": "mission_alignment",
+            "weight": 4,
+            "loc_conf": 0.7,
+            "evidence_ids": [],
+            "rationale": "Less likely to coordinate on shared projects.",
+            "updated_by": "evan",
+            "updated_at": "2025-07-20T13:24:13Z",
+            "drilldown": {
+              "snapshot_id": "project_nested_uncommit",
+              "reducer": "conf_weighted",
+              "last_rollup": 3.5
+            }
+          }
+        ]
+      }
+    ],
+    "edges": [],
+    "evidence": [
+      {
+        "id": "e_career_o1",
+        "title": "Career Coach Interview",
+        "source_url": "https://example.com/career_coach",
+        "cred_score": 0.85,
+        "mime": "text/html",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:21:13Z"
+      },
+      {
+        "id": "e_career_o2",
+        "title": "Forbes Remote Work 2024",
+        "source_url": "https://example.com/forbes_remote",
+        "cred_score": 0.91,
+        "mime": "application/html",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:21:19Z"
+      },
+      {
+        "id": "e_gottman",
+        "title": "Gottman Research - Support Metrics",
+        "source_url": "https://gottman.com/relationship-support-metrics",
+        "cred_score": 0.92,
+        "mime": "application/pdf",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:22:50Z"
+      },
+      {
+        "id": "e_time_journal",
+        "title": "Time Use Journal",
+        "source_url": "https://example.com/time-journal",
+        "cred_score": 0.63,
+        "mime": "text/html",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:22:55Z"
+      },
+      {
+        "id": "e_financial",
+        "title": "Emergency Fund Study",
+        "source_url": "https://example.com/finance2025",
+        "cred_score": 0.68,
+        "mime": "application/pdf",
+        "added_by": "evan",
+        "added_at": "2025-07-20T13:23:45Z"
+      }
+    ],
+    "confidence": 0.7,
+    "emotion": {"valence": -0.04, "arousal": 0.28},
+    "badges": { "reputation": 4, "license": "MIT" },
+    "simulation": null
+  }

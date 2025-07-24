@@ -1,0 +1,10 @@
+.gitignore
+.github/**
+package-lock.json
+node_modules/
+pnpm-lock.yaml
+datasets/**
+ops/**
+docker-compose.yml
+metrics.prom
+tsconfig.json
